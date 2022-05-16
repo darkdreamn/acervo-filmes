@@ -1,0 +1,16 @@
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\bin\Debug\net5.0\acervo-filmes.exe
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\bin\Debug\net5.0\acervo-filmes.deps.json
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\bin\Debug\net5.0\acervo-filmes.runtimeconfig.json
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\bin\Debug\net5.0\acervo-filmes.runtimeconfig.dev.json
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\bin\Debug\net5.0\acervo-filmes.dll
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\bin\Debug\net5.0\ref\acervo-filmes.dll
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\bin\Debug\net5.0\acervo-filmes.pdb
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\obj\Debug\net5.0\acervo-filmes.csproj.AssemblyReference.cache
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\obj\Debug\net5.0\acervo-filmes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\obj\Debug\net5.0\acervo-filmes.AssemblyInfoInputs.cache
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\obj\Debug\net5.0\acervo-filmes.AssemblyInfo.cs
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\obj\Debug\net5.0\acervo-filmes.csproj.CoreCompileInputs.cache
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\obj\Debug\net5.0\acervo-filmes.dll
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\obj\Debug\net5.0\ref\acervo-filmes.dll
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\obj\Debug\net5.0\acervo-filmes.pdb
+C:\Users\Lord Dark\Desktop\bootcamp web\workspace\acervo-filmes\obj\Debug\net5.0\acervo-filmes.genruntimeconfig.cache
