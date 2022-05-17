@@ -2,18 +2,18 @@ namespace acervo_filmes
 {
     public enum Genders
     {
-        Action = 1,
-        Adventure = 2,
-        Comedy = 3,
-        Documentary = 4,
+        Acao = 1,
+        Aventura = 2,
+        Comedia = 3,
+        Documentario = 4,
         Drama = 5,
-        Espionage = 6,
-        Fantasy = 7,
-        Fiction = 8,
-        Musical = 9,
-        Romance = 10,
-        Suspense = 11,
-        Terror = 12,
-        Western = 13,
+        Fantasia = 7,
+        Faroeste = 8,
+        Ficcao = 9,
+        Musical = 10,
+        Romance = 11,
+        Suspense = 12,
+        Terror = 13,
+        Outro = 14,
     }
 }

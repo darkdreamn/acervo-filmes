@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace acervo_filmes
 {
     public class Movie : CollectionDetails
