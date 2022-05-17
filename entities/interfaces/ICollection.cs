@@ -5,8 +5,8 @@ namespace acervo_filmes
     {
         void List();
         void GetById();
-        void Insert(T item);
-        void Delete(int id);
-        void Update(int id, T item);
+        void Insert();
+        void Delete();
+        void Update();
     }
 }
