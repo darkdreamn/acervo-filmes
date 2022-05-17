@@ -1,4 +1,0 @@
-namespace acervo_filmes
-{
-
-}

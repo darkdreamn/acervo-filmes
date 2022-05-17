@@ -7,9 +7,8 @@ namespace acervo_filmes.entities
         static void Main(string[] args)
         {
             MovieCollection movieCollection = new MovieCollection();
-            movieCollection.test();
+            movieCollection.Start();
             Console.ReadKey();
-
         }
     }
 }
