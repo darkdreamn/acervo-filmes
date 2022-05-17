@@ -1,5 +1,5 @@
 # acervo-filmes
-Uma acervo de filmes
+Acervo de filmes
 
 ### Operações do sistema de registro para filmes
 O usuário pode visualizar todos os filmes cadastrados</br>
