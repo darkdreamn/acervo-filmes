@@ -7,12 +7,9 @@ namespace acervo_filmes
         public Movie(int id, string name, string description, string year, Genders gender)
         : base(id, name, description, year, gender) { }
 
-
         public void Delete()
         {
             Deleted = true;
         }
-
-
     }
 }

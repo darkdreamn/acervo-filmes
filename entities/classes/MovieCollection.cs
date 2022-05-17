@@ -14,8 +14,12 @@ namespace acervo_filmes
                 option = Menu();
                 switch (option)
                 {
-                    case "1": break;
-                    case "2": break;
+                    case "1":
+                        List();
+                        break;
+                    case "2":
+                        GetById();
+                        break;
                     case "3": break;
                     case "4": break;
                     case "5": break;
@@ -31,7 +35,6 @@ namespace acervo_filmes
 
             } while (option != "6");
         }
-
         public string Menu()
         {
             Clear();
@@ -45,16 +48,57 @@ namespace acervo_filmes
             WriteLine("[6] Fechar programa");
             return ReadLine();
         }
+        public void List()
+        {
+            Clear();
+            WriteLine("ACERVO DE FILMES");
+            WriteLine("\nMostrar todos os filmes: \n");
 
+            if (movieList.Count == 0)
+                WriteLine("Nenhum filme cadastrado");
+            else
+            {
+                foreach (var movie in movieList)
+                {
+                    if (movie.Deleted == true)
+                        WriteLine($"Nome: {movie.Name}, File deletado da lista");
+                    else
+                    {
+                        WriteLine($"Id: {movie.Id}, Nome: {movie.Name}");
+                        WriteLine($"Descrição: {movie.Description}");
+                        WriteLine($"Gênero: {movie.Gender}, Ano: {movie.Year}");
+                    }
+                }
+            }
+            WriteLine("[Enter] para continuar");
+            ReadKey();
+        }
+        public void GetById()
+        {
+            int idSearch = 0;
 
-        public List<Movie> List() => movieList;
+            Clear();
+            WriteLine("ACERVO DE FILMES");
+            Write("\nDigite o Id para localizar: ");
+            idSearch = int.Parse(ReadLine());
+            WriteLine();
 
+            if (movieList.Exists(x => x.Id == idSearch))
+            {
+                WriteLine($"Nome: {movieList[idSearch].Name}");
+                WriteLine($"Descrição: {movieList[idSearch].Description}");
+                WriteLine($"Gênero: {movieList[idSearch].Gender}, Ano: {movieList[idSearch].Year}");
+            }
+            else
+                WriteLine("Filme não encontrado");
+            WriteLine("[Enter] para continuar");
+            ReadKey();
+        }
         public void Update(int id, Movie movie) => movieList[id] = movie;
 
         public void Delete(int id) => movieList[id].Delete();
 
         public void Insert(Movie movie) => movieList.Add(movie);
 
-        public Movie GetById(int id) => movieList[id];
     }
 }
