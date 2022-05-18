@@ -36,7 +36,7 @@ namespace acervo_filmes
                         List();
                         break;
                     case "2":
-                        GetById();
+                        ObtainById();
                         break;
                     case "3":
                         Insert();
@@ -95,12 +95,12 @@ namespace acervo_filmes
                     }
                 }
             }
-            WriteLine("\n[Enter] para continuar");
+            WriteLine("[Enter] para continuar");
             ReadKey();
         }
-        public void GetById()
+        public void ObtainById()
         {
-            int idSearch = GetIdSearch();
+            int idSearch = ObtainIdSearch();
 
             if (movieList.Exists(x => x.Id == idSearch))
             {
@@ -119,7 +119,7 @@ namespace acervo_filmes
             WriteLine("\n[Enter] para continuar");
             ReadKey();
         }
-        public int GetIdSearch()
+        public int ObtainIdSearch()
         {
             int idSearch = 0;
             do
@@ -143,9 +143,27 @@ namespace acervo_filmes
 
             return idSearch;
         }
+        public void ObtainNewInformationsMovie(ref string name, ref string description, ref string year, ref int gender)
+        {
+            Write("Nome: ");
+            name = ReadLine();
+            Write("Descrição: ");
+            description = ReadLine();
+            WriteLine("\nEscolha um Gênero: ");
+            WriteLine($"[{1}] {Enum.GetName(typeof(Genders), 1)}\t\t[{8}] {Enum.GetName(typeof(Genders), 8)}");
+            WriteLine($"[{2}] {Enum.GetName(typeof(Genders), 2)}\t\t[{9}] {Enum.GetName(typeof(Genders), 9)}");
+            WriteLine($"[{3}] {Enum.GetName(typeof(Genders), 3)}\t\t[{10}] {Enum.GetName(typeof(Genders), 10)}");
+            WriteLine($"[{4}] {Enum.GetName(typeof(Genders), 4)}\t[{11}] {Enum.GetName(typeof(Genders), 11)}");
+            WriteLine($"[{5}] {Enum.GetName(typeof(Genders), 5)}\t\t[{12}] {Enum.GetName(typeof(Genders), 12)}");
+            WriteLine($"[{6}] {Enum.GetName(typeof(Genders), 6)}\t\t[{13}] {Enum.GetName(typeof(Genders), 13)}");
+            WriteLine($"[{7}] {Enum.GetName(typeof(Genders), 7)}");
+            gender = int.Parse(ReadLine());
+            Write("Ano: ");
+            year = ReadLine();
+        }
         public void Update()
         {
-            int idSearch = GetIdSearch();
+            int idSearch = ObtainIdSearch();
 
             if (movieList.Exists(x => x.Id == idSearch))
             {
@@ -153,33 +171,23 @@ namespace acervo_filmes
                     WriteLine($"O filme: {movieList[idSearch - 1].Name} >> foi deletado");
                 else
                 {
-                    string name;
-                    string description;
-                    string year;
-                    int gender;
+                    string name = "";
+                    string description = "";
+                    string year = "";
+                    int gender = 0;
 
                     Clear();
                     WriteLine("ACERVO DE FILMES");
-                    WriteLine("Informações Atuais:");
+                    WriteLine("\nInformações Atuais:");
                     WriteLine($"Nome: {movieList[idSearch - 1].Name}");
                     WriteLine($"Descrição: {movieList[idSearch - 1].Description}");
                     WriteLine($"Gênero: {movieList[idSearch - 1].Gender}");
                     WriteLine($"Ano: {movieList[idSearch - 1].Year}");
 
-                    WriteLine("\nPreencha com novas informações:");
+                    WriteLine("\nPreencha com novas informações para atualizar:");
                     try
                     {
-                        Write("Nome: ");
-                        name = ReadLine();
-                        Write("Descrição: ");
-                        description = ReadLine();
-                        WriteLine("Escolha um Gênero: ");
-                        foreach (int i in Enum.GetValues(typeof(Genders)))
-                            WriteLine($"[{i}] {Enum.GetName(typeof(Genders), i)}");
-                        gender = int.Parse(ReadLine());
-                        Write("Ano: ");
-                        year = ReadLine();
-
+                        ObtainNewInformationsMovie(ref name, ref description, ref year, ref gender);
                         movieList[idSearch - 1].Name = name;
                         movieList[idSearch - 1].Description = description;
                         movieList[idSearch - 1].Gender = (Genders)gender;
@@ -199,26 +207,18 @@ namespace acervo_filmes
         }
         public void Insert()
         {
-            string name;
-            string description;
-            string year;
-            int gender;
+            string name = "";
+            string description = "";
+            string year = "";
+            int gender = 0;
             Movie newMovie;
 
-            WriteLine("Preencha com as informações:");
+            Clear();
+            WriteLine("ACERVO DE FILMES");
+            WriteLine("\nPreencha com as informações para adicionar novo filme:");
             try
             {
-                Write("Nome: ");
-                name = ReadLine();
-                Write("Descrição: ");
-                description = ReadLine();
-                WriteLine("Escolha um Gênero: ");
-                foreach (int i in Enum.GetValues(typeof(Genders)))
-                    WriteLine($"[{i}] {Enum.GetName(typeof(Genders), i)}");
-                gender = int.Parse(ReadLine());
-                Write("Ano: ");
-                year = ReadLine();
-
+                ObtainNewInformationsMovie(ref name, ref description, ref year, ref gender);
                 newMovie = new Movie(movieList.Count + 1, name, description, year, (Genders)gender);
                 movieList.Add(newMovie);
                 WriteLine("Filme adicionado!");
@@ -227,12 +227,12 @@ namespace acervo_filmes
             {
                 WriteLine("Valores válidos");
             }
-            WriteLine("[Enter] para continuar");
+            WriteLine("\n[Enter] para continuar");
             ReadKey();
         }
         public void Delete()
         {
-            int idSearch = GetIdSearch();
+            int idSearch = ObtainIdSearch();
             string choose;
 
             if (movieList.Exists(x => x.Id == idSearch))
